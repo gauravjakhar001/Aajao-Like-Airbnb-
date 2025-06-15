@@ -18,18 +18,6 @@ const FAQ = () => {
     {
       question: "How are we safe?",
       answer: "To become a host, click on 'Become a Host' in the top navigation. You'll need to create an account, provide property details, upload photos, set your pricing, and complete the verification process."
-    },
-    {
-      question: "How are our payment methods safe?",
-      answer: "We accept various payment methods including credit/debit cards, UPI, net banking, and digital wallets. All payments are secure and encrypted for your safety."
-    },
-    {
-      question: "How do we work?",
-      answer: "You can reach our customer support team 24/7 through the 'Help' section in your account, email us at support@aajoo.com, or call our toll-free number 1800-XXX-XXXX."
-    },
-    {
-      question: "Do we have host facilities?",
-      answer: "Yes, all properties listed on AAJOO go through a thorough verification process. We verify property details, amenities, and host credentials to ensure a safe and comfortable stay for our guests."
     }
   ];
 

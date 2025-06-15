@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import SignUp from "../Components/SignUp";
 import Loginkaro from "../Components/Loginkaro";
 import { Link, useLocation } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 const Header: React.FC = () => {
     const [showModal, setShowModal] = useState<'none' | 'login' | 'signup'>('none');
@@ -69,33 +70,34 @@ const Header: React.FC = () => {
                     </svg>
                 </button>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex gap-6">
-                    <Link
-                        to="/"
-                        className="text-sm font-medium text-rose-900 hover:text-rose-700">
-                        Home
-                    </Link>
-                    <Link to='/About' className='text-sm font-medium text-gray-500 hover:text-rose-700'>
-                        About
-                    </Link>
-                    <Link to='/contact' className='text-sm font-medium text-gray-500 hover:text-rose-700'>
-                        Contact
-                    </Link>
-                </nav>
-
-                {/* Desktop Auth Buttons */}
-                <div className="hidden md:flex items-center gap-4">
-                    <Link
-                        to="/host"
-                        className="text-sm font-medium text-gray-500 hover:text-rose-700">
-                        Become a Host
-                    </Link>
-                    <button
-                        onClick={() => setShowModal('signup')}
-                        className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-rose-900 to-rose-600 rounded-md hover:from-rose-800 hover:to-rose-600">
-                        Login/SignUp
-                    </button>
+                {/* Desktop Navigation and Auth Buttons - Right Side */}
+                <div className="hidden md:flex items-center gap-6">
+                    <nav className="flex gap-6">
+                        <Link
+                            to="/"
+                            className="text-sm font-medium text-rose-900 hover:text-rose-700">
+                            Home
+                        </Link>
+                        <Link to='/About' className='text-sm font-medium text-gray-500 hover:text-rose-700'>
+                            About
+                        </Link>
+                        <Link to='/contact' className='text-sm font-medium text-gray-500 hover:text-rose-700'>
+                            Contact
+                        </Link>
+                    </nav>
+                    <div className="flex items-center gap-4">
+                        <Link
+                            to="/host"
+                            className="text-sm font-medium text-gray-500 hover:text-rose-700">
+                            Become a Host
+                        </Link>
+                        <button
+                            onClick={() => setShowModal('signup')}
+                            className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-rose-900 to-rose-600 rounded-md hover:from-rose-800 hover:to-rose-600 flex items-center gap-2">
+                            <FaUser className="text-sm" />
+                            Login/SignUp
+                        </button>
+                    </div>
                 </div>
 
                 {/* Mobile Menu */}
@@ -123,7 +125,8 @@ const Header: React.FC = () => {
                                     setShowModal('signup');
                                     setIsMobileMenuOpen(false);
                                 }}
-                                className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-rose-900 to-rose-600 rounded-md hover:from-rose-800 hover:to-rose-600">
+                                className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-rose-900 to-rose-600 rounded-md hover:from-rose-800 hover:to-rose-600 flex items-center gap-2">
+                                <FaUser className="text-sm" />
                                 Login/SignUp
                             </button>
                         </nav>

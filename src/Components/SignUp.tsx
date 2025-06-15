@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { IoIosMail } from "react-icons/io";
-import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaLock, FaEye, FaEyeSlash, FaTimes } from "react-icons/fa";
 import ToggleButton from "./ToggleButton";
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 interface LoginProps {
   onClose: () => void;
@@ -63,12 +63,13 @@ const Login: React.FC<LoginProps> = ({ onClose }) => {
 
         {/* Right Form */}
         <div className="relative w-full md:w-1/2 p-8">
-          <Link
-            to="/renter-map"
-            className="absolute top-4 right-4 text-rose-600 hover:text-rose-800 text-sm font-medium transition-colors"
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="Close"
           >
-            Skip
-          </Link>
+            <FaTimes className="w-5 h-5" />
+          </button>
 
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -152,6 +153,8 @@ const Login: React.FC<LoginProps> = ({ onClose }) => {
               </motion.button>
             </form>
 
+            
+
             <ToggleButton active={active} setActive={setActive} />
 
             {/* Login link as a button in a flex row */}
@@ -168,6 +171,16 @@ const Login: React.FC<LoginProps> = ({ onClose }) => {
               >
                 Login
               </button>
+
+              <button
+                onClick={() => {
+                  navigate("/renter-map");
+                  onClose();
+                }}
+                className=" text-rose-600 hover:text-rose-800 text-sm font-medium transition-colors mt-4 mb-4"
+            >
+                Skip
+            </button>
             </div>
           </motion.div>
         </div>
